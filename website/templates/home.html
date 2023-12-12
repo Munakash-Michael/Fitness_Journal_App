@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .button { /* Green */
+          border: none;
+          border-radius: 12px;
+          color: white;
+          padding: 80px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        
+        .button1 {background-color: blue;}
+        .button2 {background-color: #da0303;}
+        .button3 {background-color: darkorchid;}
+        .button4 {background-color: #04AA6D;}
+        </style>
+</head>
+<body>
+    <center>
+    <h1>Welcome {{variable}}</h1'>
+    </center>
+    <center>
+    <a href="/fitness">
+        <button type = "button" class = "button button1">Fitness
+            <ion-icon name="barbell-outline"></ion-icon>
+        </button>
+    </a>
+    <a href="/nutrition">
+        <button type = "button button2" class = "button button2">Nutrition
+            <ion-icon name="pizza-outline"></ion-icon>
+        </button>
+    </a>
+    <a href="/progress">
+        <button type = "button" class = "button button3">Progress
+            <ion-icon name="podium-outline"></ion-icon>
+        </button>
+    </a>
+    <a href="/goalInput">
+        <button type = "button" class = "button button4">Goal
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </button>
+    </a>
+    </center>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+{% endblock %}

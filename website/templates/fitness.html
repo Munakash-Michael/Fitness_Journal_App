@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}Fitness{% endblock %} {% block content
+    %}
+    <div class="topnav">
+      <a href = "/">Home</a>
+      <a href = "/nutrition">Nutrition</a>
+      <a href = "/progress">Progress</a>
+      <a href = "/goalInput">Goal</a>
+      <a href = "/loggout">Log out</a>
+    </div>  
+    <style>
+      .topnav {
+      background-color: #333;
+      color:cyan;
+      padding: 14px 16px;
+      font-size: 20px;
+      overflow: hidden;
+    }
+    </style>
+    <form method="POST">
+      <br><br><h3 align="center">Fitness</h3>
+      <div class="form-group">
+        <label for="fitness_activity">Activity</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fitness_activity"
+          name="fitness_activity"
+          required
+          placeholder="Enter Fitness Activity"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Time (Minutes)</label>
+        <input
+          type="number"
+          class="form-control"
+          id="fitness_time"
+          name="fitness_time"
+          required
+          placeholder="Enter Activity Time"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <table style = "width: 100%;">
+        <tr>
+        <th>Activity</th>
+        <th>Time</th>
+        </tr>
+        {%for row in activity%}
+        <tr>
+          {%for cell in row%}
+          <td>{{cell}}</td>
+          {%endfor%}
+        </tr>
+        {%endfor%}
+      </table>
+    {% endblock %}

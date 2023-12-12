@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Goal{% endblock %} {% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal</title>
+</head>
+<body>
+    <div class="topnav">
+        <a href = "/">Home</a>
+        <a href = "/nutrition">Nutrition</a>
+        <a href = "/fitness">Fitness</a>
+        <a href = "/progress">Progress</a>
+        <a href = "/loggout">Log out</a>
+      </div>  
+      <style>
+        .topnav {
+        background-color: #333;
+        color:cyan;
+        padding: 14px 16px;
+        font-size: 20px;
+        overflow: hidden;
+      }
+      </style>
+    <center>
+    <h1>Your Goal: {{weight}} pounds by {{date}}</h1'>
+    </center>
+</body>
+{% endblock %}

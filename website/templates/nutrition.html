@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block title %}Nutrition{% endblock %} {% block content
+    %}
+    <div class="topnav">
+      <a href = "/">Home</a>
+      <a href = "/fitness">Fitness</a>
+      <a href = "/progress">Progress</a>
+      <a href = "/goalInput">Goal</a>
+      <a href = "/loggout">Log out</a>
+    </div>  
+    <style>
+      .topnav {
+      background-color: #333;
+      color:cyan;
+      padding: 14px 16px;
+      font-size: 20px;
+      overflow: hidden;
+    }
+    </style>
+    <form method="POST">
+      <br><br><h3 align="center">Nutrition</h3>
+      <div class="form-group">
+        <label for="Food Name">Food Name:</label>
+        <select name = "food_input" id = "food_input" required>
+          <option>Pick a Food</option>
+          {%for row in food_names%}
+          {%for cell in row%}
+          <option value = "{{cell}}">{{cell}}</option>
+          {%endfor%}
+          {%endfor%}
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+<ul id="myMenu">
+    <table style = "width: 100%;">
+      <tr>
+      <th>Food Name</th>
+      <th>Calories</th>
+      <th>Total Fat</th>
+      <th>Carbs</th>
+      <th>Date</th>
+      </tr>
+      {%for row in food_info%}
+      <tr>
+        {%for cell in row%}
+        <td>{{cell}}</td>
+        {%endfor%}
+      </tr>
+      {%endfor%}
+    </table>
+    <script>
+    </script>
+    {% endblock %}

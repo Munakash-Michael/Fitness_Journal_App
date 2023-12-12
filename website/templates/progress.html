@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Progress{% endblock %} {% block content
+    %}
+    <div class="topnav">
+      <a href = "/">Home</a>
+      <a href = "/nutrition">Nutrition</a>
+      <a href = "/fitness">Fitness</a>
+      <a href = "/goalInput">Goal</a>
+      <a href = "/loggout">Log out</a>
+    </div>  
+    <style>
+      .topnav {
+      background-color: #333;
+      color:cyan;
+      padding: 14px 16px;
+      font-size: 20px;
+      overflow: hidden;
+    }
+    </style>
+
+    <form method="POST">
+      <br><br><h3 align="center">Progress</h3>
+      <div class="form-group">
+        <label for="current_weight">Current Weight (Ibs):</label>
+        <input
+          type="number"
+          class="form-control"
+          id="progress_weight"
+          name="progress_weight"
+          required
+          placeholder="Enter Weight"
+        />
+      </div>
+      <div class="form-group">
+        <label for="current_weight">Current Date: </label>
+        <input
+          type="date"
+          class="form-control"
+          id="progress_date"
+          name="progress_date"
+          required
+          placeholder="Enter Date"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p>Goal: {{goal_weight}} by {{goal_date}}</p>
+    <table style = "width: 100%;">
+      <tr>
+      <th>Weight</th>
+      <th>Date</th>
+      </tr>
+      {%for row in progress%}
+      <tr>
+        {%for cell in row%}
+        <td>{{cell}}</td>
+        {%endfor%}
+      </tr>
+      {%endfor%}
+    </table>
+    {% endblock %}
