@@ -1,4 +1,4 @@
-Fitness Journal (Python - Flask - PostgreSQL - Psycopg2) 
+Fitness Journal (Python - HTML - Flask - PostgreSQL - Psycopg2) 
 Journal to keep track of the user’s fitness journey. 
 The user will input a weight goal and date they want to achieve that goal. 
 They have the ability to keep up with their progress by inputting their weight on certain days. 
